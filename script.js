@@ -20,14 +20,13 @@ function getRandomShadeColor() {
 function GridGenerator() {
   const colorCount = {};
 
-  for (let i = 1; i <= 1999; i++) {
+  for (let i = 1; i <= 999; i++) {
     const div = document.createElement("div");
-    const randomNumber = Math.floor(Math.random() * 1999) + 1;
+    const randomNumber = Math.floor(Math.random() * 999) + 1;
 
     const randomColor = getRandomShadeColor();
     const colorCode = randomColor.code;
 
-    // Update the color count
     colorCount[colorCode] = (colorCount[colorCode] || 0) + 1;
 
     div.style.backgroundColor = colorCode;
@@ -39,7 +38,6 @@ function GridGenerator() {
   console.log("Color Count (Before User Input):", colorCount);
 
   document.addEventListener('keydown', function(event) {
-    // Check if the pressed key is 'a'
     if (event.key === 'a') {
       const redCountInput = prompt(`Enter the amount of Reds there are:`);
       const redCount = parseInt(redCountInput) || 0;
